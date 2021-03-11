@@ -8,7 +8,7 @@ plt.rcParams['figure.figsize'] = [14, 6]
 st.title('Water Value Analysis')
 
 # Filling levels
-df = pd.read_csv('/data/interim/fillinglevels.csv', index_col='acqdate')
+df = pd.read_csv('data/interim/fillinglevels.csv', index_col='acqdate')
 df.index = pd.to_datetime(df.index)
 df = df.resample('M').first()
 
