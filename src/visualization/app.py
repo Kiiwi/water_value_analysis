@@ -53,7 +53,7 @@ df_water_usage['Water Used'] = water_used
 
 # System price
 st.subheader('System Price')
-df_price = pd.read_csv('/data/interim/system_price.csv', index_col='date')
+df_price = pd.read_csv('data/interim/system_price.csv', index_col='date')
 df_price.index = pd.to_datetime(df_price.index)
 df_price['year'] = df_price.index.year
 
@@ -70,7 +70,7 @@ df_price = df_price.groupby('year').mean()
 df_price.index = df_price.index + 1
 
 # NVE
-df_nve = pd.read_csv('/data/interim/nve.csv', index_col='dato_Id')
+df_nve = pd.read_csv('data/interim/nve.csv', index_col='dato_Id')
 df_nve.index = pd.to_datetime(df_nve.index)
 df_nve = df_nve.resample('M').first()
 df_nve = df_nve['fyllingsgrad']
